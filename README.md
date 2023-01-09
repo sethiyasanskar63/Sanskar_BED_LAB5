@@ -2,4 +2,4 @@
 
 #Submitted by: Sanskar Sethiya
 
-#Description: This project is created with the help of Spring framework, H2 Database and Thymeleaf template engine.
+#Description: This Employee Management Application created with the help of Spring framework, H2 Database and Thymeleaf template engine.
