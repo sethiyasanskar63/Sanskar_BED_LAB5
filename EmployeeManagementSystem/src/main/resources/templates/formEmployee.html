@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	name="viewport">
+<meta content="ie=edge" http-equiv="X-UA-Compatible">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<title>Employee Management System</title>
+</head>
+<body>
+	<div class="container">
+		<header
+			class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+			<a href="/"
+				class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+				Employee Management System</a>
+
+			<ul
+				class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+				<li><a href="/employees/list"
+					class="nav-link px-2 link-secondary">Employees</a></li>
+				<li><a href="/employees/add" class="nav-link px-2 link-dark">New
+						Employee</a></li>
+			</ul>
+		</header>
+
+		<h3 th:text="*{formType}"></h3>
+		<hr>
+
+		<form  th:action="'/employees/save?id='+${employee.id}" method="POST">
+
+			<div class="form-inline">
+				<input class="form-control mb-4 col-4" type="text" name="firstName"
+					required th:field="${employee.firstName}" placeholder="First Name">
+			</div>
+
+			<div class="form-inline">
+				<input class="form-control mb-4 col-4" type="text" name="lastName"
+					required th:field="${employee.lastName}" placeholder="Last Name">
+			</div>
+
+			<div class="form-inline">
+				<input class="form-control mb-4 col-4" type="text" name="email"
+					required th:field="${employee.email}" placeholder="Email">
+			</div>
+
+			<button type="submit" class="btn btn-info col-2">Save</button>
+
+		</form>
+
+		<hr>
+		<a href="/employees/list">Back to Employees List</a>
+
+	</div>
+
+</body>
+</html>
